@@ -1,2 +1,2 @@
 # GameDev2019-Logan
-For school projects
+https://logangamedev2019.github.io/GameDev2019-Logan/
