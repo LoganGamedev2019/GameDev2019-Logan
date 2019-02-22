@@ -1,0 +1,55 @@
+<h3 align=center> T3A03-Logan.html</h3>
+<input type=button value="Input/Outpt" OnClick="{
+   alert('welcome')
+}"><br>
+
+<input type=text id="myText01" value="Logan"><br>
+<textarea id="myArea01" rows=4 cols=70></textarea>
+
+<table>
+<tr>
+<td>
+<input type=button value="Variable" onclick="{
+ document.all.myArea01.value= document.all.myText01.value
+ myX = 3
+ myY = 5
+ myWord = myX + myY
+ //myArray[3] = 'super'
+document.all.myArea01.value =myWord
+}"></td>
+
+<td2><input type=text id="myText02" value=5>
+<input type=button value="variables 2" onClick="{
+ myX = document.all.myText02.value
+document.all.myArea01.value = myX + 'x 3 =' + myX * myX
+}"> </td2>
+
+<td3><input type=button value="loop" onClick="{
+ for (myLoop =1; myLoop <= 2; myLoop++){
+  alert('loop' + myLoop)
+
+}
+}">
+</td3> 
+<td4><input type=button value="If/Then" onClick="{
+myX=3
+  if (myX == 4){
+	document.all.myArea01.value= 'yes myX does equal 3. It is' + myX
+ } else{ 
+	document.all.myArea01.value = 'No myX was' + myX
+}
+}">
+</td4>
+<script>
+function myfun(myPass){
+  document.all.myArea01.value = myPass + ' a function called myFun()'
+}
+</script>
+
+<input type=button value="Functions" onClick="{
+  myPass = 'Really not fun'
+  myFun(myPass)
+}">
+</tr>
+</table> 
+
