@@ -4,7 +4,7 @@
 
 
 x = <input type=text id="myText01" value=7>
-<div id="myDiv01">...</div>
+<div id="myDiv01">yes</div>
 <input type=button value="test innerHTML" onClick="{
 document.all.myDiv01.innerHTML = 
 'Cool<font color=red> innerHTML<font color=green>  works</font>'
@@ -14,9 +14,14 @@ document.all.myDiv01.innerHTML =
 'cool <font style=\' color:red; background-color:blue; \'>color'+
 ' </font>cool'
 }">
-<input type=button value="img" onClick="{
-<img id='myImage' src='city line.jpg'>
-<script>
-document.all.myImage.src = 'city line.jpg';
-</script>
+<input type=button value="getElementById()" onclick="{
+document.getElementById('myDiv01').innerHTML =   'nice'
+}">
+<input type=button value="img" onclick="{
+   document.all.myDiv01.innerHTML = 
+   '<img src=river.jpg width=300>'
+}">
+<input type=button value="Video" onclick="{
+   document.all.myDiv01.innerHTML = 
+   '<iframe width=560 height=315 src='https://www.youtube.com/embed/dlaYyZ6vW48' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>'
 }">
