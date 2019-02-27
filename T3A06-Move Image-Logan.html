@@ -1,0 +1,52 @@
+
+
+<h2 align="center">Move Image by Logan </h2>
+
+
+
+<input type=text value=0 size=6 onmouseover="{
+	this.value = 'x = ' + document.getElementById('myImage01').style.left
+}">
+<img src="T3A06-Move Image-Logan_files/river.jpg" width="300" id="myImage01"
+ style="position: absolute; z-index: -1; left: 290px; top: 200px; height: 300px; width: 300px;">
+
+<input type=button value="go right" onClick="{
+	document.getElementById('myImage01').style.left =
+parseInt(document.getElementById('myImage01').style.left) + 10 + 'px'
+}">
+<input type=button value="go left" onClick="{
+	document.getElementById('myImage01').style.left =
+parseInt(document.getElementById('myImage01').style.left) + -10 + 'px'
+}">
+<input type=button value="go up" onClick="{
+	document.getElementById('myImage01').style.top =
+parseInt(document.getElementById('myImage01').style.top) + -10 + 'px'
+}">
+<input type=button value="go down" onClick="{
+	document.getElementById('myImage01').style.top =
+parseInt(document.getElementById('myImage01').style.top) + 10 + 'px'
+}">
+<input type=button value="go diagonal(up left)" onClick="{
+	document.getElementById('myImage01').style.top =
+parseInt(document.getElementById('myImage01').style.top) + -10 + 'px'
+document.getElementById('myImage01').style.left =
+parseInt(document.getElementById('myImage01').style.left) + -10 + 'px'
+}">
+<input type=button value="go diagonal(down left)" onClick="{
+	document.getElementById('myImage01').style.left =
+parseInt(document.getElementById('myImage01').style.left) + -10 + 'px'
+	document.getElementById('myImage01').style.top =
+parseInt(document.getElementById('myImage01').style.top) + 10 + 'px'
+}">
+<input type=button value="go diagonal(up right" onClick="{
+	document.getElementById('myImage01').style.left =
+parseInt(document.getElementById('myImage01').style.left) + 10 + 'px'
+document.getElementById('myImage01').style.top =
+parseInt(document.getElementById('myImage01').style.top) + -10 + 'px'
+}">
+<input type=button value="go diagonal(down right)" onClick="{
+	document.getElementById('myImage01').style.left =
+parseInt(document.getElementById('myImage01').style.left) + 10 + 'px'
+	document.getElementById('myImage01').style.top =
+parseInt(document.getElementById('myImage01').style.top) + 10 + 'px'
+}">
