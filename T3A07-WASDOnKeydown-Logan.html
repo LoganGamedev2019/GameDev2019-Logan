@@ -1,0 +1,51 @@
+
+
+<h2 align="center">WASD OnKeyDown </h2>
+
+
+
+
+
+<input id="myText01" type=text value=0 size=6 onmouseover="{
+	this.value = 'x = ' + document.getElementById('myImage01').style.left
+}">
+<img src="space.jpg" width="300" id="myImage01"
+ style="position: absolute; z-index: -1; left: 290px; top: 200px; height: 300px; width: 300px;">
+
+
+<body onkeydown="{ 
+document.all.myText01.value = event.key
+if (event.key == 'd'){
+	document.getElementById('myImage01').style.left =
+parseInt(document.getElementById('myImage01').style.left) + 10 + 'px'
+}
+if (event.key == 'a'){
+	document.getElementById('myImage01').style.left =
+parseInt(document.getElementById('myImage01').style.left) + -10 + 'px'
+}
+if (event.key == 's'){
+	document.getElementById('myImage01').style.top =
+parseInt(document.getElementById('myImage01').style.top) + 10 + 'px'
+}
+if (event.key == 'w'){
+	document.getElementById('myImage01').style.top =
+parseInt(document.getElementById('myImage01').style.top) + -10 + 'px'
+}
+if (event.key == 'ArrowRight'){
+	document.getElementById('myImage01').style.left =
+parseInt(document.getElementById('myImage01').style.left) + 10 + 'px'
+}
+if (event.key == 'ArrowLeft'){
+	document.getElementById('myImage01').style.left =
+parseInt(document.getElementById('myImage01').style.left) + -10 + 'px'
+}
+if (event.key == 'ArrowDown'){
+	document.getElementById('myImage01').style.top =
+parseInt(document.getElementById('myImage01').style.top) + 10 + 'px'
+}
+if (event.key == 'ArrowUp'){
+	document.getElementById('myImage01').style.top =
+parseInt(document.getElementById('myImage01').style.top) + -10 + 'px'
+}
+}">
+</body>
