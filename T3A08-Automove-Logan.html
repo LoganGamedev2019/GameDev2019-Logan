@@ -1,0 +1,55 @@
+<h2 align=center>Auto Move by logan </h2>
+
+<img src="myImage02.png"  id="myImage02" style="position:relative;
+z-index:-1; left:0px; top:0px; height:100px; width:100px;">
+
+
+<script> var myLooping = 0 </script>
+
+<input type=button value="auto right" onclick="{
+   clearInterval(myLooping)
+   myLooping = setInterval(function(){
+      document.getElementById('myImage02').style.left =
+      parseInt(document.getElementById('myImage02').style.left) + 10 + 'px'
+
+      if (parseInt(document.getElementById('myImage02').style.left) > 600){
+         document.getElementById('myImage02').style.left = '0px'
+      }
+   }, 60)
+}">
+<input type=button value="auto left" onclick="{
+   clearInterval(myLooping)
+   myLooping = setInterval(function(){
+      document.getElementById('myImage02').style.left =
+      parseInt(document.getElementById('myImage02').style.left) + -10 + 'px'
+
+      if (parseInt(document.getElementById('myImage02').style.left) > 600){
+         document.getElementById('myImage02').style.left = '0px'
+      }
+   }, 60)
+}">
+<input type=button value="auto up" onclick="{
+   clearInterval(myLooping)
+   myLooping = setInterval(function(){
+      document.getElementById('myImage02').style.top =
+      parseInt(document.getElementById('myImage02').style.top) + -10 + 'px'
+
+      if (parseInt(document.getElementById('myImage02').style.top) > 600){
+         document.getElementById('myImage02').style.top = '0px'
+      }
+   }, 60)
+}">
+<input type=button value="auto down" onclick="{
+   clearInterval(myLooping)
+   myLooping = setInterval(function(){
+      document.getElementById('myImage02').style.top =
+      parseInt(document.getElementById('myImage02').style.top) + 10 + 'px'
+
+      if (parseInt(document.getElementById('myImage02').style.top) > 600){
+         document.getElementById('myImage02').style.top = '0px'
+      }
+   }, 60)
+}">
+
+</body>
+</html>
