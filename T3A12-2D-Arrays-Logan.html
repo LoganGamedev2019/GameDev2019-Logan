@@ -1,0 +1,42 @@
+<h2 align=center> 2D Arrays by Logan </h2>
+	
+	
+<input type=button value="Generate 2D Array" onclick="{
+
+	document.getElementById('myDiv01').innerHTML = ' '
+	let myChart = new Array()	
+	
+myChart[0] = new Array()
+myChart[1] = new Array()
+myChart[2] = new Array()
+myChart[3] = new Array()
+
+myChart[0][1] = 5
+myChart[1][1] = 6
+myChart[2][1] = 7
+myChart[3][1] = 8
+myChart[0][2] = 9
+myChart[1][2] = 10
+myChart[2][2] = 11
+myChart[3][2] = 12
+myChart[0][3] = 13
+myChart[1][3] = 14
+myChart[2][3] = 15
+myChart[3][3] = 16
+myChart[0][0] = 1
+myChart[1][0] = 2
+myChart[2][0] = 3
+myChart[3][0] = 4
+
+document.getElementById('myDiv01').innerHTML += `
+	<table border=1>
+	<tr><td>  ${myChart[0][0]}  </td><td>  ${myChart[0][1]}  </td><td>  ${myChart[0][3]} </td></td></tr>
+	<tr><td>  ${myChart[1][0]} </td><td>  ${myChart[1][1]}  </td><td>  ${myChart[0][2]}  </td></tr>
+	<tr><td>  ${myChart[2][0]} </td><td>  ${myChart[2][1]}  </td><td>  ${myChart[1][3]} </td></tr>
+	<tr><td>  ${myChart[3][0]} </td><td>  ${myChart[3][1]}  </td><td>  ${myChart[1][2]}  </td></tr>
+	<tr><td>  ${myChart[3][3]} </td><td>  ${myChart[3][2]}  </td><td>  ${myChart[2][3]} </td></tr>
+	</table>`
+
+}"><br><br>
+
+<div id="myDiv01" > Yeet</div>
