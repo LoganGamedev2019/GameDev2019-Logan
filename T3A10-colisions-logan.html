@@ -1,7 +1,7 @@
 <h2 align="center">WASD for left img and arrow keys for right img</h2>
-<body bgcolor="yellow"   onMouseMove="{
+<h3 align="center">Use Left Image To Grab Right Image</h3>
+<body bgcolor="purple"   onMouseMove="{
    document.all.myLocation.value = 'left: '+event.x+', top: '+ event.y
-
 
 
 }">
@@ -12,20 +12,20 @@
 }">
 
 <img src="myImage02.png"  id="myImage02" style="position:absolute;
-z-index:-1; left:0px; top:200px; height:200px; width:200px;">
+z-index:-1; left:330px; top:50px; height:200px; width:200px;">
+
+
 
 <img src="river.jpg" width="10" id="myImage01"
- style="position: absolute; z-index: -1; left: 1000px; top: 200px; height: 200px; width: 200px;">
+ style="position: absolute; z-index: -1; left: 1000px; top: 50px; height: 200px; width: 200px;">
 <body onkeydown="{ 
-document.all.myText01.value = event.key
-if (event.key == 'ArrowRight'){
-	document.getElementById('myImage01').style.left =
-parseInt(document.getElementById('myImage01').style.left) + 10 + 'px'
-
-}
 if (event.key == 'ArrowLeft'){
 	document.getElementById('myImage01').style.left =
 parseInt(document.getElementById('myImage01').style.left) + -10 + 'px'
+}
+if (event.key == 'ArrowRight'){
+	document.getElementById('myImage01').style.left =
+parseInt(document.getElementById('myImage01').style.left) + 10 + 'px'
 }
 if (event.key == 'ArrowDown'){
 	document.getElementById('myImage01').style.top =
@@ -75,8 +75,6 @@ function myHitOther(my1,my2){
 }
 }
 </script>
-
-
 
 
 
