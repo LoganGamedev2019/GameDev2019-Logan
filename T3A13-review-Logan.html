@@ -28,7 +28,7 @@ document.all.myArea01.value = myX + '^2 =' + myX * myX
 }">  
 </li>
 <li>
-<input type=button value="loop" onClick="{
+<input type=button value="Loop & Variable" onClick="{
 document.all.myArea01.value = ''
   for ( x = 1; x<= 100; x++){
 	document.all.myArea01.value += x+ ','
@@ -39,14 +39,24 @@ document.all.myArea01.value = ''
 <input type=text id="myText01" value="7"><br>
 <textarea id="myArea01" rows=4 cols=80></textarea>
 <li>
-<input type=button value="Decision" onclick="{
+<input type=button value="Decision(if/else)" onclick="{
  x = document.all.myText01.value
 if (x == 7){
 	document.all.myArea01.value = 'you selected  7'
  }else{
 document.all.myArea01.value= 'you did not select a 7'}
 }">
-
+<input type=button value="Object & Event(mouse over)" onmouseover="{
+   x = 2
+Car = {
+   carName: 'Audi ',
+   carModel: 'R8 ',
+   modelYear: 2019,
+   color: 'Black',
+}
+document.all.myArea01.value= 'the object Car is ' + 
+Car.carName + Car.carModel +'Model year: ' + Car.modelYear + ' ' + 'color: ' + Car.color
+}">
 
 </li>
 
