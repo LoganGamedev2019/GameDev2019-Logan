@@ -1,12 +1,7 @@
-make a div call myDiv01
-Add a button that inserts into the div
 <input type=button value="insert div" onclick="{
 	document.getElementById('myDiv01').innerHTML = ' '
 		
 	
-
-
-
 document.getElementById('myDiv01').innerHTML += `
 	<table border=1>
 <ol>
@@ -21,13 +16,41 @@ document.getElementById('myDiv01').innerHTML += `
 <li>Classes</li>
 </ol>
 	</table>`
-
 }"><br><br>
-
-
-
-
-
 <div id="myDiv01" >yeet </div>
+
+
+<ol2>
+<li><input type=text id="myText02" value=5>
+<input type=button value="Variable(Type Number in text box and press to square)" onClick="{
+ myX = document.all.myText02.value
+document.all.myArea01.value = myX + '^2 =' + myX * myX
+}">  
+</li>
+<li>
+<input type=button value="loop" onClick="{
+document.all.myArea01.value = ''
+  for ( x = 1; x<= 100; x++){
+	document.all.myArea01.value += x+ ','
+
+}
+}">
+</li>
+<input type=text id="myText01" value="7"><br>
+<textarea id="myArea01" rows=4 cols=80></textarea>
+<li>
+<input type=button value="Decision" onclick="{
+ x = document.all.myText01.value
+if (x == 7){
+	document.all.myArea01.value = 'you selected  7'
+ }else{
+document.all.myArea01.value= 'you did not select a 7'}
+}">
+
+
+</li>
+
+
+
 
 
