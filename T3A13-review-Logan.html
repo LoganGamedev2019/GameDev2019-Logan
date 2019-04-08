@@ -81,21 +81,22 @@ document.all.myArea01.value= document.all.myText01.value
 
  }">
 </li>
-<li>
+
 <input type=button value="Array" onclick="{
  myMax = 4
 myArray= new Array(myMax)
  myArray[1] ='yes'
- myArray[2] ='no'
- myArray[3] ='error'
- myArray[4] ='incorrect'
+ myArray[2] ='Sí'
+ myArray[3] ='Oui'
+ myArray[4] ='Ja'
 
 document.all.myArea01.value = ' '
 for( x = 1; x<= myMax;x++){
  document.all.myArea01.value += myArray[x] + '< ' 
 }
-</li>
+
 }">
+
 <li> Function \/
 </li>
 
@@ -106,37 +107,37 @@ function mySquare(myNumber){
 
 </script>
 <div id="myDiv03" > Square Numbers</div>
-<input type=button value="1^{2}" onClick="{
+<input type=button value="15^{2}" onClick="{
 	
-myNumber = 1
-	
-mySquare(myNumber)
-}">
-<input type=button value="2^{2}" onClick="{
-myNumber = 2
+myNumber = 15
 	
 mySquare(myNumber)
 }">
-<input type=button value="3^{2}" onClick="{
-	myNumber = 3
+<input type=button value="25^{2}" onClick="{
+myNumber = 25
 	
 mySquare(myNumber)
-
 }">
-<input type=button value="4^{2}" onClick="{
-	myNumber = 4
+<input type=button value="30^{2}" onClick="{
+	myNumber = 30
 	
 mySquare(myNumber)
 
 }">
-<input type=button value="5^{2}" onClick="{
-	myNumber = 5
+<input type=button value="47^{2}" onClick="{
+	myNumber = 47
 	
 mySquare(myNumber)
 
 }">
-<input type=button value="6^{2}" onClick="{
-	myNumber = 6
+<input type=button value="56^{2}" onClick="{
+	myNumber = 56
+	
+mySquare(myNumber)
+
+}">
+<input type=button value="62^{2}" onClick="{
+	myNumber = 62
 	
 mySquare(myNumber)
 
