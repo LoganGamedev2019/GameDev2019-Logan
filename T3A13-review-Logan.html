@@ -6,14 +6,23 @@ document.getElementById('myDiv01').innerHTML += `
 	<table border=1>
 <ol>
 <li>Input/Output</li>
-<li>Decisions</li>
-<li>Variables</li>
+<li>Decisions if (x == 7){
+	Computery stuff~
+ }else{
+Computery stuff~</li>
+<li>Variables X = 3;x=<10;x++</li>
 <li>Arrays</li>
-<li>Objects</li>
+<li>Objects
+Car = {
+   carName: 'Audi ',
+   carModel: 'R8 ',
+   modelYear: 2019,
+   color: 'Black',</li>
 <li>Functions</li>
-<li>Events</li>
-<li>loops</li>
-<li>Classes</li>
+<li>Events onMouseOver</li>
+<li>loops X = 3;x=<10;x++</li>
+<li>Classes: methods=functions
+properties=variables</li>
 </ol>
 	</table>`
 }"><br><br>
@@ -59,8 +68,78 @@ Car.carName + Car.carModel +'Model year: ' + Car.modelYear + ' ' + 'color: ' + C
 }">
 
 </li>
+<li>
+<script>
+function my01(){
+  document.all.myArea01.value='wow it worked'
+}
+</script>
+<input type=button value="input" onclick="{
+  my01(myText01)
 
+document.all.myArea01.value= document.all.myText01.value
 
+ }">
+</li>
+<li>
+<input type=button value="Array" onclick="{
+ myMax = 4
+myArray= new Array(myMax)
+ myArray[1] ='yes'
+ myArray[2] ='no'
+ myArray[3] ='error'
+ myArray[4] ='incorrect'
 
+document.all.myArea01.value = ' '
+for( x = 1; x<= myMax;x++){
+ document.all.myArea01.value += myArray[x] + '< ' 
+}
+</li>
+}">
+<li> Function \/
+</li>
+
+<script>
+function mySquare(myNumber){
+	document.getElementById('myDiv03').innerHTML= myNumber * myNumber
+}
+
+</script>
+<div id="myDiv03" > Square Numbers</div>
+<input type=button value="1^{2}" onClick="{
+	
+myNumber = 1
+	
+mySquare(myNumber)
+}">
+<input type=button value="2^{2}" onClick="{
+myNumber = 2
+	
+mySquare(myNumber)
+}">
+<input type=button value="3^{2}" onClick="{
+	myNumber = 3
+	
+mySquare(myNumber)
+
+}">
+<input type=button value="4^{2}" onClick="{
+	myNumber = 4
+	
+mySquare(myNumber)
+
+}">
+<input type=button value="5^{2}" onClick="{
+	myNumber = 5
+	
+mySquare(myNumber)
+
+}">
+<input type=button value="6^{2}" onClick="{
+	myNumber = 6
+	
+mySquare(myNumber)
+
+}">
 
 
