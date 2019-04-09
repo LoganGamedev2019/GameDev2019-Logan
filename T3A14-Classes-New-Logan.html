@@ -1,0 +1,31 @@
+<h2 align=center>Jacascript Classes Introduction by Fred </h2>
+<input type=text id="myNameinput" placeholder="Enter an animal name here" value=" ">
+
+<input id="myButton130" type="button" value="Make and Show the class myAnimal" onclick="{
+
+	class myAnimal {
+	  constructor(passName, passAge) {
+		this.myName = passName; 
+		this.myAge = passAge;
+	}
+	myShow(){
+		document.getElementById('myDiv130').innerHTML = 'Hello ' + this.myName + '.You are ' +this.myAge + ' years old<br> '
+	}
+}  
+	myDog = new myAnimal ('Lucy' , 5)
+	myDog.myShow()
+}"><br><br>
+	<div id='myDiv130'>....</div><br>
+	
+	<script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+	
+	<input type="button" value="use ResponsiveCode" onclick="{
+		responsiveVoice.speak('Dogs are better than cats change my mind')
+
+	}"><br><br>
+
+	<input type="button" value="initialize speak" onclick="{
+		responsiveVoice.speak('You can't change my mind because cats are just worse',
+	'US English Female',
+{pitch: 1, rate: 1, volume : 1})
+}">
