@@ -1,4 +1,5 @@
 <h1 align=center>All Javascript by Logan</h1>
+<h2 align=center><font color="red">Press D for Event</font></h2>
 
 <script>
 function my01(){
@@ -47,11 +48,24 @@ for( x = 1; x<= myMax;x++){
 }">
 
 <input type=button value="Event onmouseover" onmouseover="{
-document.all.myArea01.value=' stay away from buttons '
+document.all.myArea01.value=' bop it '
+}">
+<input type=button value="Event onmouseout(hover over the button then off)" onmouseout="{
+document.all.myArea01.value=' Comeback '
 }">
 <input type=button value="Event dblclick" ondblclick="{
-document.all.myArea01.value=' stay away from buttons '
+document.all.myArea01.value=' bop it x2 '
 }">
+<input type=button value="Event onswheel (use the scroll wheel over button)" onwheel="{
+document.all.myArea01.value=' twist it '
+}">
+<body onkeydown="{ 
+document.all.myText01.value = event.key
+if (event.key == 'd'){
+	document.all.myArea01.value='Congrats you pressed d'
+}
+}">
+
 <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">List of events</a>
 <input type=button value="Object Example" onclick="{
    x = 2
