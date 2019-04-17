@@ -1,0 +1,111 @@
+<h1 align=center> Encryption by Logan </h1>
+<textarea id="myArea01" rows=4 cols=70> Hello how are you</textarea>
+	
+<input type=button value="encrypt" onclick="{
+   let myTemp = ''
+   myString = document.getElementById('myArea01').value.toLowerCase().split('')
+   for (let myLoop=0;   myLoop < myString.length; myLoop++){
+      myTemp = myString[myLoop]
+
+	if (myString[myLoop] == 'a') {myTemp  = 'v'}
+	if (myString[myLoop] == 'b') {myTemp  = 'n'}
+	if (myString[myLoop] == 'c') {myTemp  = 'x'}
+	if (myString[myLoop] == 'd') {myTemp  = 'b'}
+	if (myString[myLoop] == 'e') {myTemp  = 'c'}
+	if (myString[myLoop] == 'f') {myTemp  = 'm'}
+	if (myString[myLoop] == 'g') {myTemp  = 'z'}
+	if (myString[myLoop] == 'h') {myTemp  = 'g'}
+	if (myString[myLoop] == 'i') {myTemp  = 'h'}
+	if (myString[myLoop] == 'j') {myTemp  = 'f'}
+	if (myString[myLoop] == 'k') {myTemp  = 'j'}
+	if (myString[myLoop] == 'l') {myTemp  = 'd'}
+	if (myString[myLoop] == 'm') {myTemp  = 'k'}
+	if (myString[myLoop] == 'n') {myTemp  = 's'}
+	if (myString[myLoop] == 'o') {myTemp  = 'l'}
+	if (myString[myLoop] == 'p') {myTemp  = 'a'}
+	if (myString[myLoop] == 'q') {myTemp  = 'y'}
+	if (myString[myLoop] == 'r') {myTemp  = 't'}
+	if (myString[myLoop] == 's') {myTemp  = 'u'}
+	if (myString[myLoop] == 't') {myTemp  = 'r'}
+	if (myString[myLoop] == 'u') {myTemp  = 'i'}
+	if (myString[myLoop] == 'v') {myTemp  = 'e'}
+	if (myString[myLoop] == 'w') {myTemp  = 'o'}
+	if (myString[myLoop] == 'x') {myTemp  = 'w'}
+	if (myString[myLoop] == 'y') {myTemp  = 'p'}
+	if (myString[myLoop] == 'z') {myTemp  = 'q'}
+
+     
+
+
+      //alert(myLoop+', '+myString[myLoop])
+
+      myString[myLoop] = myTemp
+   }
+
+   document.getElementById('myArea02').value = myString.join('')
+}"><br><br>
+
+<textarea id="myArea02" rows=3 cols=60></textarea>
+ 
+
+<input type=button value="decrypt" onclick="{
+   let myTemp = ''
+   myString = document.getElementById('myArea02').value.toLowerCase().split('')
+   for (let myLoop=0;   myLoop < myString.length; myLoop++){
+      myTemp = myString[myLoop]
+
+
+	if (myString[myLoop] == 'v') {myTemp  = 'a'}
+	if (myString[myLoop] == 'n') {myTemp  = 'b'}
+	if (myString[myLoop] == 'x') {myTemp  = 'c'}
+	if (myString[myLoop] == 'b') {myTemp  = 'd'}
+	if (myString[myLoop] == 'c') {myTemp  = 'e'}
+	if (myString[myLoop] == 'm') {myTemp  = 'f'}
+	if (myString[myLoop] == 'z') {myTemp  = 'g'}
+	if (myString[myLoop] == 'g') {myTemp  = 'h'}
+	if (myString[myLoop] == 'h') {myTemp  = 'i'}
+	if (myString[myLoop] == 'f') {myTemp  = 'j'}
+	if (myString[myLoop] == 'j') {myTemp  = 'k'}
+	if (myString[myLoop] == 'd') {myTemp  = 'l'}
+	if (myString[myLoop] == 'k') {myTemp  = 'm'}
+	if (myString[myLoop] == 's') {myTemp  = 'n'}
+	if (myString[myLoop] == 'l') {myTemp  = 'o'}
+	if (myString[myLoop] == 'a') {myTemp  = 'p'}
+	if (myString[myLoop] == 'y') {myTemp  = 'q'}
+	if (myString[myLoop] == 't') {myTemp  = 'r'}
+	if (myString[myLoop] == 'u') {myTemp  = 's'}
+	if (myString[myLoop] == 'r') {myTemp  = 't'}
+	if (myString[myLoop] == 'i') {myTemp  = 'u'}
+	if (myString[myLoop] == 'e') {myTemp  = 'v'}
+	if (myString[myLoop] == 'o') {myTemp  = 'w'}
+	if (myString[myLoop] == 'w') {myTemp  = 'x'}
+	if (myString[myLoop] == 'p') {myTemp  = 'y'}
+	if (myString[myLoop] == 'q') {myTemp  = 'z'}
+
+
+
+      myString[myLoop] = myTemp
+   }
+
+   document.getElementById('myArea03').value = myString.join('')
+}"><br><br>
+
+<textarea id="myArea03" rows=3 cols=60></textarea>
+
+<input type=button value="using ascii numbers" onclick="{
+	let myString = document.getElementById('myArea01').value.toLowerCase()
+	let myTemp = ' '
+		for(let x=0; x < myString.length; x++){
+			myTemp += String.fromCharCode(myString.charCodeAt(x)+1)
+	}
+		document.getElementById(myArea02').value= myTemp
+}">
+
+<input type=button value="using ascii numbers" onclick="{
+	let myString = document.getElemntById('myArea02').value.toLowerCase()
+	let myTemp = ' '
+		for(let x=0; x < myString.length;x++){
+			myTemp += String.fromCharCode(myString.charCodeAt(x) -1)
+	}
+document.getElementById{'myArea03').value = myTemp
+}">
