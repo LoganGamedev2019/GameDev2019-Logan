@@ -98,14 +98,15 @@
 		for(let x=0; x < myString.length; x++){
 			myTemp += String.fromCharCode(myString.charCodeAt(x)+1)
 	}
-		document.getElementById(myArea02').value= myTemp
+		document.getElementById('myArea02').value= myTemp
 }">
 
-<input type=button value="using ascii numbers" onclick="{
-	let myString = document.getElemntById('myArea02').value.toLowerCase()
+<input type=button value="using numbers" onclick="{
+	let myString = document.getElementById('myArea02').value.toLowerCase()
 	let myTemp = ' '
-		for(let x=0; x < myString.length;x++){
-			myTemp += String.fromCharCode(myString.charCodeAt(x) -1)
-	}
-document.getElementById{'myArea03').value = myTemp
+		for (let x=0; x < myString.length; x++){
+			myTemp += String.fromCharCode(myString.charCodeAt(x)-1)
+}
+	document.getElementById('myArea03').value = myTemp
+
 }">
