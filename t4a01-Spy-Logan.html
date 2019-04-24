@@ -92,7 +92,7 @@
 
 <textarea id="myArea03" rows=3 cols=60></textarea>
 
-<input type=button value="using ascii numbers" onclick="{
+<input type=button value="encrypt using numbers" onclick="{
 	let myString = document.getElementById('myArea01').value.toLowerCase()
 	let myTemp = ' '
 		for(let x=0; x < myString.length; x++){
@@ -101,7 +101,7 @@
 		document.getElementById('myArea02').value= myTemp
 }">
 
-<input type=button value="using numbers" onclick="{
+<input type=button value="decrypt using numbers" onclick="{
 	let myString = document.getElementById('myArea02').value.toLowerCase()
 	let myTemp = ' '
 		for (let x=0; x < myString.length; x++){
@@ -110,3 +110,16 @@
 	document.getElementById('myArea03').value = myTemp
 
 }">
+
+<button onclick="myFunction()">Try it</button>
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  var str = "How do i decode this";
+  var enc = window.btoa(str);
+
+  var res = "Encoded String: " + enc;
+  document.getElementById("demo").innerHTML = "The original string: " + str + "<br>" + res;
+}
+</script>
