@@ -193,23 +193,23 @@ myContext.beginPath();
 }">
 </li>
 </ol>
-<input type=button value=".fillText('Hello World', 400, 100)" onclick="{
+<input type=button value="text" onclick="{
 
    myContext.font = '20px Arial';
-   myContext.fillText('Yes Please', 400, 100);
+   myContext.fillText('I should get a 9/9 for tic tac toe', 500, 600);
 
-   myContext.translate(400, 100);  // move rotation point from 0,0
-   myContext.rotate(60 * Math.PI / 180); // 60 in degrees
+   myContext.translate(500, 600);  // move rotation point from 0,0
+   myContext.rotate(90 * Math.PI / 180); // 60 in degrees
 
-   myContext.fillText('LOOOOOOOOOOOOOOOOOOOOOOOOONG SENTANCE', 10, 10);
+   myContext.fillText('please', 10, 10);
    myContext.stroke();
 
   // reset
    myContext.resetTransform();  // move rotation point from 0,0
-   //myContext.rotate(-60 * Math.PI / 180); // 60 in degrees
+   //myContext.rotate(-90 * Math.PI / 180); //  in degrees
 }">
 
-<input type=button value=".quadraticCurveTo(100,220,240,110)" onclick="{
+<input type=button value="Curve" onclick="{
    myContext.beginPath();
    myContext.moveTo(300,700);
    myContext.quadraticCurveTo(450,700,500,150);
@@ -218,7 +218,7 @@ myContext.beginPath();
 }">
 
 
-<input type=button value=".createLinearGradient(0, 0, 1000, 1000)" onclick="{
+<input type=button value="Colors" onclick="{
    let myGradient = myContext.createLinearGradient(500, 100, 300,400);
    myGradient.addColorStop(0.5, 'red');
    myGradient.addColorStop(0.3, 'blue');
