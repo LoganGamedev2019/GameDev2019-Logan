@@ -4,16 +4,23 @@
    document.all.myLocation.value = 'left: '+event.x+', top: '+ event.y
 
 
-}">
-</body>
+
+
+
+}"></body>
+
+
+
 <input type=text id="myLocation" value=0 size=14">
 <input id="myText01" type=text value=0 size=6 onmouseover="{
 	this.value = 'x = ' + document.getElementById('myImage01').style.left
 }">
-
-<img src="2048.png"  id="2048 2" style="position:absolute;
+<img src="2048.png"  id="myImage02" style="position:absolute;
+z-index:-1; left:500px; top:12px; height:200px; width:200px;">
+<img src="2048.png"  id="myImage02" style="position:absolute;
 z-index:-1; left:227px; top:12px; height:200px; width:200px;">
-
+<img src="river.jpg"  id="river" style="position:absolute;
+z-index:-1; left:227px; top:12px; height:200px; width:200px;">
 
 <script> var myLooping = 0 </script>
 <img src="2048.png" width="10" id="myImage01"
@@ -23,7 +30,7 @@ if (event.key == 'ArrowLeft'){
 	   clearInterval(myLooping)
    myLooping = setInterval(function(){
       document.getElementById('myImage01').style.left =
-      parseInt(document.getElementById('myImage01').style.left) + -10 + 'px'
+      parseInt(document.getElementById('myImage01').style.left) + -50000 + 'px'
 
       if (parseInt(document.getElementById('myImage01').style.left) < 222){
          document.getElementById('myImage01').style.left = '222px'
@@ -34,10 +41,11 @@ if (event.key == 'ArrowRight'){
    clearInterval(myLooping)
    myLooping = setInterval(function(){
       document.getElementById('myImage01').style.left =
-      parseInt(document.getElementById('myImage01').style.left) + 10 + 'px'
+      parseInt(document.getElementById('myImage01').style.left) + 50000 + 'px'
 
       if (parseInt(document.getElementById('myImage01').style.left) > 1027){
          document.getElementById('myImage01').style.left = '1027px'
+
       }
    }, 60)
 }
@@ -45,7 +53,7 @@ if (event.key == 'ArrowDown'){
    clearInterval(myLooping)
    myLooping = setInterval(function(){
       document.getElementById('myImage01').style.top =
-      parseInt(document.getElementById('myImage01').style.top) + 10 + 'px'
+      parseInt(document.getElementById('myImage01').style.top) + 50000 + 'px'
 
       if (parseInt(document.getElementById('myImage01').style.top) > 515){
          document.getElementById('myImage01').style.top = '515px'
@@ -56,13 +64,14 @@ if (event.key == 'ArrowUp'){
 clearInterval(myLooping)
    myLooping = setInterval(function(){
       document.getElementById('myImage01').style.top =
-      parseInt(document.getElementById('myImage01').style.top) + -10 + 'px'
+      parseInt(document.getElementById('myImage01').style.top) + -50000 + 'px'
 
       if (parseInt(document.getElementById('myImage01').style.top) < 12){
          document.getElementById('myImage01').style.top = '12px'
       }
    }, 60)
 }
+
 if (event.key == 'd'){
 	document.getElementById('myImage02').style.left =
 parseInt(document.getElementById('myImage02').style.left) + 10 + 'px'
@@ -79,11 +88,12 @@ if (event.key == 'w'){
 	document.getElementById('myImage02').style.top =
 parseInt(document.getElementById('myImage02').style.top) + -10 + 'px'
 }
-if ( myHitOther('myImage01','myPlayarea') ){
-
+if ( myHitOther('myImage02','river') ){
+  myImage02.x += myGamePiece.speedX;
+  myImage02.y += myGamePiece.speedY;
 }
 }">
-</body>
+
 
 <script>
 function myHitOther(my1,my2){
