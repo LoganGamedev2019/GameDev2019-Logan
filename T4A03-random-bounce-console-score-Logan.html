@@ -1,0 +1,36 @@
+<h2 align=center>Auto Move by logan </h2>
+<input type=text id="myScore" value=0>
+<img src="myImage02.png"  id="myImage02" style="position:relative;
+z-index:-1; left:0px; top:0px; height:100px; width:100px;">
+
+
+<script> 
+var mySpeed = 20
+var myLooping = 0
+var myTotal = 0
+myDirection= 1
+ </script>
+
+
+
+
+
+<input type=button value="auto right" onclick="{
+   clearInterval(myLooping)
+   myLooping = setInterval(function(){
+
+mySpeed= Math.floor(Math.random() *50) + 5
+      document.getElementById('myImage02').style.left =
+      parseInt(document.getElementById('myImage02').style.left) + mySpeed + 'px'
+
+      if (parseInt(document.getElementById('myImage02').style.left) > 200){
+       myDirection =myDirection * -1
+myTotal =myTotal + 1
+document.getElementById('myScore').value = myTotal
+      }
+   }, 60)
+}">
+
+
+</body>
+</html>
