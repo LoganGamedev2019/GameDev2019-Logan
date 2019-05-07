@@ -1,0 +1,29 @@
+<body onload="{
+	myStorage = localStorage.getItem('myStorageText')
+	if(myStorage !=null){
+		document.getElementById('myText01').value= myStorage
+	}
+}">
+<body onunload="{
+	localstorage.setItem('myStorageText',document.getElementById('myText01').value)
+}">
+
+
+
+<pre>
+	myCars= new Array()
+	myCars[1] = 'Tesla'
+	myCars[2] ='Electric Car'
+</pre>
+
+<input id="myText01" type=Text size=70	value="write stuff here to be stored next time you come to this site.">
+
+<input type="button" value="Stored Text" onclick="{
+	localStorage.setItem('myStorageText', document.getElementById('myText01').value)
+	alert(document.getElementById('myText01').value + ' \nHas been stored')
+	document.getElementById('myText01').value = ' '
+}">
+
+<input type="button" value="retrieve text" onclick="{
+	document.getElementById('myText01').value = localStorage.getItem('myStorageText')
+}">
