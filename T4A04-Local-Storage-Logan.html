@@ -51,7 +51,7 @@
 <input type="button" value="retrieve text" onclick="{
 	document.getElementById('myText01').value = localStorage.getItem('myStorageText')
 }">
-<input id="myText02" type=Text size=70	value="write stuff here to be stored next time you come to this site.">
+<input id="myText02" type=Text size=70	value="6">
 <input type="button" value="Stored Text" onclick="{
 	localStorage.setItem('myStorageText02', document.getElementById('myText02').value)
 	alert(document.getElementById('myText02').value + ' \nHas been stored')
@@ -61,7 +61,7 @@
 <input type="button" value="retrieve text" onclick="{
 	document.getElementById('myText02').value = localStorage.getItem('myStorageText02')
 }">
-<input id="myText03" type=Text size=70	value="write stuff here to be stored next time you come to this site.">
+<input id="myText03" type=Text size=70	value="6.234542">
 <input type="button" value="Stored Text" onclick="{
 	localStorage.setItem('myStorageText03', document.getElementById('myText03').value)
 	alert(document.getElementById('myText03').value + ' \nHas been stored')
@@ -71,9 +71,9 @@
 <input type="button" value="retrieve text" onclick="{
 	document.getElementById('myText03').value = localStorage.getItem('myStorageText03')
 }">
-<input id="myText04" type=Text size=70	value="write stuff here to be stored next time you come to this site.">
+<input id="myText04" type=Text size=70	value="<br><br>">
 <input type="button" value="Stored Text" onclick="{
-	localStorage.setItem('myStorageText04', document.getElementById('myText03').value)
+	localStorage.setItem('myStorageText04', document.getElementById('myText04').value)
 	alert(document.getElementById('myText04').value + ' \nHas been stored')
 	document.getElementById('myText04').value = ' '
 }">
