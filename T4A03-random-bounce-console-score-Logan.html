@@ -20,12 +20,17 @@ myDirection2= -1
    clearInterval(myLooping)
    myLooping = setInterval(function(){
 
-mySpeed= Math.floor(Math.random() *50) + 5 * myDirection
+mySpeed= Math.floor(Math.random() *2) + 1 * myDirection
       document.getElementById('myImage02').style.left =
       parseInt(document.getElementById('myImage02').style.left) + mySpeed + 'px'
 
       if (parseInt(document.getElementById('myImage02').style.left) > 100){
        myDirection =mySpeed * -1
+myTotal =myTotal + 1
+document.getElementById('myScore').value = myTotal
+      }
+ if (parseInt(document.getElementById('myImage02').style.left) < -100){
+       myDirection =mySpeed * 1
 myTotal =myTotal + 1
 document.getElementById('myScore').value = myTotal
       }
