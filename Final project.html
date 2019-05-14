@@ -2,12 +2,11 @@
 
 <body    onMouseMove="{
    document.all.myLocation.value = 'left: '+event.x+', top: '+ event.y
-
-
-
-
-
 }"></body>
+<input type=text id="myScore" value=0>
+
+
+
 
 
 
@@ -15,37 +14,46 @@
 <input id="myText01" type=text value=0 size=6 onmouseover="{
 	this.value = 'x = ' + document.getElementById('myImage01').style.left
 }">
-<img src="2048.png"  id="myImage02" style="position:absolute;
-z-index:-1; left:500px; top:12px; height:200px; width:200px;">
-<img src="2048.png"  id="myImage02" style="position:absolute;
-z-index:-1; left:227px; top:12px; height:200px; width:200px;">
-<img src="river.jpg"  id="river" style="position:absolute;
-z-index:-1; left:227px; top:12px; height:200px; width:200px;">
 
-<script> var myLooping = 0 </script>
-<img src="2048.png" width="10" id="myImage01"
- style="position: absolute; z-index: -1; left: 400px; top: 12px; height: 200px; width: 200px;">
+
+
+
+
+
+<script> var myLooping = 0 
+var myGamepiece= "myImage01"
+var mySpeed = 30
+var myTotal = 0
+var Ball=  new component(30, 30, "red", 10, 120);
+</script>
+
+<img src="2048.png" width="20" id="myImage01"
+ style="position: absolute; z-index: -1; left: 400px; top: 12px; height: 100px; width: 100px;">
 <body onkeydown="{ 
+
 if (event.key == 'ArrowLeft'){
 	   clearInterval(myLooping)
    myLooping = setInterval(function(){
       document.getElementById('myImage01').style.left =
-      parseInt(document.getElementById('myImage01').style.left) + -50000 + 'px'
+      parseInt(document.getElementById('myImage01').style.left) + -mySpeed + 'px'
 
-      if (parseInt(document.getElementById('myImage01').style.left) < 222){
-         document.getElementById('myImage01').style.left = '222px'
-      }
+      if (parseInt(document.getElementById('myImage01').style.left) < 402){
+         document.getElementById('myImage01').style.left = '402px'
+   myTotal =myTotal + 1
+document.getElementById('myScore').value = myTotal
+   }
    }, 60)
 }
 if (event.key == 'ArrowRight'){
    clearInterval(myLooping)
    myLooping = setInterval(function(){
       document.getElementById('myImage01').style.left =
-      parseInt(document.getElementById('myImage01').style.left) + 50000 + 'px'
+      parseInt(document.getElementById('myImage01').style.left) + mySpeed + 'px'
 
-      if (parseInt(document.getElementById('myImage01').style.left) > 1027){
-         document.getElementById('myImage01').style.left = '1027px'
-
+      if (parseInt(document.getElementById('myImage01').style.left) > 1179){
+         document.getElementById('myImage01').style.left = '1179px'
+myTotal =myTotal + 1
+document.getElementById('myScore').value = myTotal
       }
    }, 60)
 }
@@ -53,44 +61,58 @@ if (event.key == 'ArrowDown'){
    clearInterval(myLooping)
    myLooping = setInterval(function(){
       document.getElementById('myImage01').style.top =
-      parseInt(document.getElementById('myImage01').style.top) + 50000 + 'px'
+      parseInt(document.getElementById('myImage01').style.top) + mySpeed + 'px'
 
-      if (parseInt(document.getElementById('myImage01').style.top) > 515){
-         document.getElementById('myImage01').style.top = '515px'
-      }
+      if (parseInt(document.getElementById('myImage01').style.top) > 613){
+         document.getElementById('myImage01').style.top = '613px'
+      myTotal =myTotal + 1
+document.getElementById('myScore').value = myTotal
+}
    }, 60)
 }
+
 if (event.key == 'ArrowUp'){
 clearInterval(myLooping)
    myLooping = setInterval(function(){
       document.getElementById('myImage01').style.top =
-      parseInt(document.getElementById('myImage01').style.top) + -50000 + 'px'
+      parseInt(document.getElementById('myImage01').style.top) + -mySpeed + 'px'
 
       if (parseInt(document.getElementById('myImage01').style.top) < 12){
          document.getElementById('myImage01').style.top = '12px'
+myTotal =myTotal + 1
+document.getElementById('myScore').value = myTotal
       }
    }, 60)
 }
+if(myTotal+1){
+mySpeed=mySpeed+1
+}
+if(myTotal>100){
+myContext.beginPath();
+   myContext.lineWidth = 10;
+   myContext.strokeStyle = 'red';
+   myContext.arc(250, 250, 40, 0, 2 * Math.PI);
+   myContext.stroke();
+}
 
 if (event.key == 'd'){
-	document.getElementById('myImage02').style.left =
-parseInt(document.getElementById('myImage02').style.left) + 10 + 'px'
+	document.getElementById('4').style.left =
+parseInt(document.getElementById('4').style.left) + 10 + 'px'
 }
 if (event.key == 'a'){
-	document.getElementById('myImage02').style.left =
-parseInt(document.getElementById('myImage02').style.left) + -10 + 'px'
+	document.getElementById('4').style.left =
+parseInt(document.getElementById('4').style.left) + -10 + 'px'
 }
 if (event.key == 's'){
-	document.getElementById('myImage02').style.top =
-parseInt(document.getElementById('myImage02').style.top) + 10 + 'px'
+	document.getElementById('4').style.top =
+parseInt(document.getElementById('4').style.top) + 10 + 'px'
 }
 if (event.key == 'w'){
-	document.getElementById('myImage02').style.top =
-parseInt(document.getElementById('myImage02').style.top) + -10 + 'px'
+	document.getElementById('4').style.top =
+parseInt(document.getElementById('4').style.top) + -10 + 'px'
 }
-if ( myHitOther('myImage02','river') ){
-  myImage02.x += myGamePiece.speedX;
-  myImage02.y += myGamePiece.speedY;
+if ( myHitOther('myImage02','4') ){
+'myImage02' == '4'
 }
 }">
 
@@ -113,14 +135,15 @@ function myHitOther(my1,my2){
 }
 }
 </script>
-<canvas id="myPlayarea" width="1000" height="700" style="border:5px solid #000000;"></canvas>
+<canvas id="myPlayarea" width="875" height="700" style="border:5px solid #000000;"></canvas>
 
 <script>
    // set up global variables
-   let myCanvas=document.getElementById('myCoolTag');
-   let myContext=myCanvas.getContext('2d');
+	let myCanvas=document.getElementById('myCoolTag');
+	let myContext=myCanvas.getContext('2d');
 
 </script>
 
 
+  
 
