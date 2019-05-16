@@ -1,0 +1,170 @@
+<!-- this script got from www.htmlbestcodes.com-Coded by: Krishna Eydat -->
+<html>
+<head>
+</head>
+<body    onMouseMove="{
+   document.all.myLocation.value = 'left: '+event.x+', top: '+ event.y
+}">
+<input type=text id="myScore" value=0>
+<input type=text id="myLocation" value=0 size=14">
+<input id="myText01" type=text value=0 size=6 onmouseover="{
+	this.value = 'x = ' + document.getElementById('myImage01').style.left
+}">
+<body>
+<div align="center" id="img" style="position:absolute;">
+<img src="http://www.htmlbestcodes.com/images/ball.gif" onMouseDown="pauseResume();">
+</div>
+<SCRIPT LANGUAGE="JavaScript">
+var step = 5;
+var delay = 30;
+var height = 0;
+var Hoffset = 0;
+var Woffset = 0;
+var yon = 0;
+var xon = 0;
+var pause = true;
+var interval;
+var name = navigator.appName;
+var xPos = 20;
+if(name) var yPos = document.body.clientHeight;
+else var yPos = window.innerHeight;
+function changePos() {
+if(name) {
+width = 1000;
+height = 1000;
+Hoffset = img.offsetHeight;
+Woffset = img.offsetWidth;
+img.style.left = xPos + document.body.scrollLeft;
+img.style.top = yPos + document.body.scrollTop;
+}
+else {
+height = 300
+width = 300
+Hoffset =33;
+Woffset =30;
+document.getElementById('img').style.top = yPos + window.pageYOffset;
+document.getElementById('img').style.left = xPos + window.pageXOffset;
+}
+if (yon) {
+yPos = yPos + step;
+}
+else {
+yPos = yPos - step;
+}
+if (yPos < 0) {
+yon = 1;
+yPos = 0;
+}
+if (yPos >= (height - Hoffset)) {
+yon = 0;
+yPos = (height - Hoffset);
+}
+if (xon) {
+xPos = xPos + step;
+}
+else {
+xPos = xPos - step;
+}
+if (xPos < 0) {
+xon = 1;
+xPos = 0;
+}
+if (xPos >= (width - Woffset)) {
+xon = 0;
+xPos = (width - Woffset);
+   }
+}
+function start() {
+document.getElementById('img').style.visibility = "visible";
+interval = setInterval('changePos()',delay);
+}
+function pauseResume() {
+if(pause) {
+clearInterval(interval);
+pause = false;
+}
+else {
+interval = setInterval('changePos()',delay);
+pause = true;
+   }
+}
+start();
+//  End -->
+</script>
+<canvas id="myPlayarea" width="875" height="700" style="border:5px solid #000000;"></canvas>
+
+<script>
+   // set up global variables
+	let myCanvas=document.getElementById('myCoolTag');
+	let myContext=myCanvas.getContext('2d');
+
+</script>
+<script> var myLooping = 0 
+var myGamepiece= "myImage01"
+var mySpeed = 30
+var myTotal = 0
+var Ball=  new component(30, 30, "red", 10, 120);
+</script>
+
+<img src="2048.png" width="20" id="myImage01"
+ style="position: absolute; z-index: -1; left: 400px; top: 12px; height: 100px; width: 100px;">
+<body onkeydown="{ 
+
+if (event.key == 'ArrowLeft'){
+	   clearInterval(myLooping)
+   myLooping = setInterval(function(){
+      document.getElementById('myImage01').style.left =
+      parseInt(document.getElementById('myImage01').style.left) + -mySpeed + 'px'
+
+      if (parseInt(document.getElementById('myImage01').style.left) < 402){
+         document.getElementById('myImage01').style.left = '402px'
+   myTotal =myTotal + 1
+document.getElementById('myScore').value = myTotal
+   }
+   }, 60)
+}
+if (event.key == 'ArrowRight'){
+   clearInterval(myLooping)
+   myLooping = setInterval(function(){
+      document.getElementById('myImage01').style.left =
+      parseInt(document.getElementById('myImage01').style.left) + mySpeed + 'px'
+
+      if (parseInt(document.getElementById('myImage01').style.left) > 1179){
+         document.getElementById('myImage01').style.left = '1179px'
+myTotal =myTotal + 1
+document.getElementById('myScore').value = myTotal
+      }
+   }, 60)
+}
+if (event.key == 'ArrowDown'){
+   clearInterval(myLooping)
+   myLooping = setInterval(function(){
+      document.getElementById('myImage01').style.top =
+      parseInt(document.getElementById('myImage01').style.top) + mySpeed + 'px'
+
+      if (parseInt(document.getElementById('myImage01').style.top) > 613){
+         document.getElementById('myImage01').style.top = '613px'
+      myTotal =myTotal + 1
+document.getElementById('myScore').value = myTotal
+}
+   }, 60)
+}
+
+if (event.key == 'ArrowUp'){
+clearInterval(myLooping)
+   myLooping = setInterval(function(){
+      document.getElementById('myImage01').style.top =
+      parseInt(document.getElementById('myImage01').style.top) + -mySpeed + 'px'
+
+      if (parseInt(document.getElementById('myImage01').style.top) < 12){
+         document.getElementById('myImage01').style.top = '12px'
+myTotal =myTotal + 1
+document.getElementById('myScore').value = myTotal
+      }
+   }, 60)
+}
+}">
+
+
+</body>
+</html>
