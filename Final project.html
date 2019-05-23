@@ -15,7 +15,7 @@
 <img src="http://www.htmlbestcodes.com/images/ball.gif" onMouseDown="pauseResume();">
 </div>
 <SCRIPT LANGUAGE="JavaScript">
-var step = 5;
+var step = 10;
 var delay = 30;
 var height = 0;
 var Hoffset = 0;
@@ -30,8 +30,8 @@ if(name) var yPos = document.body.clientHeight;
 else var yPos = window.innerHeight;
 function changePos() {
 if(name) {
-width = 1600;
-height = 900;
+width = 1400 ;
+height =900;
 Hoffset = img.offsetHeight;
 Woffset = img.offsetWidth;
 img.style.left = xPos + document.body.scrollLeft;
@@ -40,8 +40,8 @@ img.style.top = yPos + document.body.scrollTop;
 else {
 height = 200;
 width = 200;
-Hoffset =33;
-Woffset =30;
+Hoffset =22;
+Woffset =20;
 document.getElementById('img').style.top = yPos + window.pageYOffset;
 document.getElementById('img').style.left = xPos + window.pageXOffset;
 }
@@ -68,6 +68,17 @@ xPos = xPos - step;
 if (xPos < 0) {
 xon = 1;
 xPos = 0;
+}
+if (xPos >100) {
+myTotal =myTotal + 1
+document.getElementById('myScore').value = myTotal
+
+}
+
+if (myTotal  >0) {
+step = step +1
+
+
 }
 if (xPos >= (width - Woffset)) {
 xon = 0;
@@ -164,6 +175,7 @@ document.getElementById('myScore').value = myTotal
    }, 60)
 }
 }">
+
 
 
 </body>
