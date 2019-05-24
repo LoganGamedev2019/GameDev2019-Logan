@@ -7,21 +7,20 @@
 }">
 <input type=text id="myScore" value=0>
 <input type=text id="myLocation" value=0 size=14">
-<input id="myText01" type=text value=0 size=6 onmouseover="{
-	this.value = 'x = ' + document.getElementById('myImage01').style.left
 }">
 <body>
 <div align="center" id="img" style="position:absolute;">
-<img src="http://www.htmlbestcodes.com/images/ball.gif" onMouseDown="pauseResume();">
+<img src="ball.jfif" id="ball" onMouseDown="pauseResume();">
 </div>
 <SCRIPT LANGUAGE="JavaScript">
-var step = 5;
+var step = 10;
 var delay = 30;
 var height = 0;
 var Hoffset = 0;
 var Woffset = 0;
 var yon = 0;
 var xon = 0;
+var loc= xPos+yPos;
 var pause = true;
 var interval;
 var name = navigator.appName;
@@ -30,18 +29,18 @@ if(name) var yPos = document.body.clientHeight;
 else var yPos = window.innerHeight;
 function changePos() {
 if(name) {
-width = 1000;
-height = 1000;
+width = 1400 ;
+height =900;
 Hoffset = img.offsetHeight;
 Woffset = img.offsetWidth;
 img.style.left = xPos + document.body.scrollLeft;
 img.style.top = yPos + document.body.scrollTop;
 }
 else {
-height = 300
-width = 300
-Hoffset =33;
-Woffset =30;
+height = 200;
+width = 200;
+Hoffset =22;
+Woffset =20;
 document.getElementById('img').style.top = yPos + window.pageYOffset;
 document.getElementById('img').style.left = xPos + window.pageXOffset;
 }
@@ -68,6 +67,20 @@ xPos = xPos - step;
 if (xPos < 0) {
 xon = 1;
 xPos = 0;
+}
+if (xPos >100) {
+myTotal =myTotal + 1
+document.getElementById('myScore').value = myTotal
+
+}
+if(xPos == myLoc) {
+xPos=0
+}
+
+if (myTotal  >0) {
+step = step +.001
+
+
 }
 if (xPos >= (width - Woffset)) {
 xon = 0;
@@ -103,7 +116,7 @@ start();
 var myGamepiece= "myImage01"
 var mySpeed = 30
 var myTotal = 0
-var Ball=  new component(30, 30, "red", 10, 120);
+var myLoc =  'width= 100px'
 </script>
 
 <img src="2048.png" width="20" id="myImage01"
@@ -161,9 +174,32 @@ clearInterval(myLooping)
 myTotal =myTotal + 1
 document.getElementById('myScore').value = myTotal
       }
+
    }, 60)
+if ( myHitOther('ball','myImage01') ){
+       alert('I win')
+}
 }
 }">
+<script>
+function myHitOther(my1,my2){
+   left1   = parseInt(document.getElementById(my1).style.left)
+   right1  = left1 + parseInt(document.getElementById(my1).style.width)
+   top1    = parseInt(document.getElementById(my1).style.top)   
+   bottom1 = top1 + parseInt(document.getElementById(my1).style.height)
+   left2   = parseInt(document.getElementById(my2).style.left)
+   right2  = left2 + parseInt(document.getElementById(my2).style.width)
+   top2    = parseInt(document.getElementById(my2).style.top)   
+   bottom2 = top2 + parseInt(document.getElementById(my2).style.height)
+ if ((right1  >=  left2  ) &&      	   
+       (bottom1 >=  top2   ) &&
+       (left1   <=  right2 ) &&
+       (top1    <=  bottom2) ){
+       return true
+}
+}
+</script>
+
 
 
 </body>
