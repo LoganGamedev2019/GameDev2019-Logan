@@ -7,13 +7,14 @@
 }">
 <input type=text id="myScore" value=0>
 <input type=text id="myLocation" value=0 size=14">
-}">
+
 <body>
 <div align="center" id="img" style="position:absolute;">
-<img src="ball.jfif" id="ball" onMouseDown="pauseResume();">
+<img src="green ball.png" id="ball" onMouseDown="pauseResume();
+z-index: -1; left: 400px; top: 12px; height: 50px; width: 50px;">
 </div>
 <SCRIPT LANGUAGE="JavaScript">
-var step = 10;
+var speed = 10;
 var delay = 30;
 var height = 0;
 var Hoffset = 0;
@@ -29,8 +30,8 @@ if(name) var yPos = document.body.clientHeight;
 else var yPos = window.innerHeight;
 function changePos() {
 if(name) {
-width = 1400 ;
-height =900;
+width = 1225 ;
+height =712;
 Hoffset = img.offsetHeight;
 Woffset = img.offsetWidth;
 img.style.left = xPos + document.body.scrollLeft;
@@ -38,17 +39,17 @@ img.style.top = yPos + document.body.scrollTop;
 }
 else {
 height = 200;
-width = 200;
+width = 352;
 Hoffset =22;
 Woffset =20;
 document.getElementById('img').style.top = yPos + window.pageYOffset;
 document.getElementById('img').style.left = xPos + window.pageXOffset;
 }
 if (yon) {
-yPos = yPos + step;
+yPos = yPos + speed;
 }
 else {
-yPos = yPos - step;
+yPos = yPos - speed;
 }
 if (yPos < 0) {
 yon = 1;
@@ -59,16 +60,16 @@ yon = 0;
 yPos = (height - Hoffset);
 }
 if (xon) {
-xPos = xPos + step;
+xPos = xPos + speed;
 }
 else {
-xPos = xPos - step;
+xPos = xPos - speed;
 }
 if (xPos < 0) {
 xon = 1;
 xPos = 0;
 }
-if (xPos >100) {
+if (xPos >352) {
 myTotal =myTotal + 1
 document.getElementById('myScore').value = myTotal
 
@@ -78,7 +79,7 @@ xPos=0
 }
 
 if (myTotal  >0) {
-step = step +.001
+speed = speed +.001
 
 
 }
@@ -142,8 +143,8 @@ if (event.key == 'ArrowRight'){
       document.getElementById('myImage01').style.left =
       parseInt(document.getElementById('myImage01').style.left) + mySpeed + 'px'
 
-      if (parseInt(document.getElementById('myImage01').style.left) > 1179){
-         document.getElementById('myImage01').style.left = '1179px'
+      if (parseInt(document.getElementById('myImage01').style.left) > 1101){
+         document.getElementById('myImage01').style.left = '1101px'
 myTotal =myTotal + 1
 document.getElementById('myScore').value = myTotal
       }
