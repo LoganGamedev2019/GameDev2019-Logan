@@ -1,0 +1,82 @@
+
+<h2 align="center">WASD for left img and arrow keys for right img</h2>
+<h3 align="center">Use Left Image To Grab Right Image</h3>
+<body bgcolor="purple"   onMouseMove="{
+   document.all.myLocation.value = 'left: '+event.x+', top: '+ event.y
+
+
+
+}">
+</body>
+<input type=text id="myLocation" value=0 size=14">
+<input id="myText01" type=text value=0 size=6 onmouseover="{
+	this.value = 'x = ' + document.getElementById('myImage01').style.left
+}">
+
+<img src="myImage02.png"  id="myImage02" style="position:absolute;
+z-index:-1; left:330px; top:50px; height:200px; width:200px;">
+<script> 
+var mySpeed = 10
+var myLooping = 0
+var myTotal = 0
+myDirection= 1
+myDirection2= -1
+ </script>
+
+
+<img src="river.jpg" width="10" id="myImage01"
+ style="position: absolute; z-index: -1; left: 1000px; top: 50px; height: 200px; width: 200px;">
+<body onkeydown="{ 
+
+
+if (event.key == 'd'){
+	document.getElementById('myImage02').style.left =
+parseInt(document.getElementById('myImage02').style.left) + mySpeed + 'px'
+}
+
+
+if (event.key == 'a'){
+	document.getElementById('myImage02').style.left =
+parseInt(document.getElementById('myImage02').style.left) + -mySpeed + 'px'
+}
+
+
+if (event.key == 's'){
+	document.getElementById('myImage02').style.top =
+parseInt(document.getElementById('myImage02').style.top) + mySpeed + 'px'
+}
+if (event.key == 'w'){
+	document.getElementById('myImage02').style.top =
+parseInt(document.getElementById('myImage02').style.top) + -mySpeed + 'px'
+}
+
+
+if ( myHitOther('myImage01','myImage02') ){
+       alert('I win')
+}
+
+
+}">
+</body>
+
+<script>
+function myHitOther(my1,my2){
+   left1   = parseInt(document.getElementById(my1).style.left)
+   right1  = left1 + parseInt(document.getElementById(my1).style.width)
+   top1    = parseInt(document.getElementById(my1).style.top)   
+   bottom1 = top1 + parseInt(document.getElementById(my1).style.height)
+   left2   = parseInt(document.getElementById(my2).style.left)
+   right2  = left2 + parseInt(document.getElementById(my2).style.width)
+   top2    = parseInt(document.getElementById(my2).style.top)   
+   bottom2 = top2 + parseInt(document.getElementById(my2).style.height)
+ if ((right1  >=  left2  ) &&      	   
+       (bottom1 >=  top2   ) &&
+       (left1   <=  right2 ) &&
+       (top1    <=  bottom2) ){
+       return true
+}
+}
+</script>
+
+
+
