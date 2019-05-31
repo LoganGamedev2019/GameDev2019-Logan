@@ -1,64 +1,78 @@
-
-<h2 align="center">WASD for left img and arrow keys for right img</h2>
-<h3 align="center">Use Left Image To Grab Right Image</h3>
-<body bgcolor="purple"   onMouseMove="{
+<html>
+<head>
+</head>
+<body    onMouseMove="{
    document.all.myLocation.value = 'left: '+event.x+', top: '+ event.y
-
-
-
 }">
-</body>
-<input type=text id="myLocation" value=0 size=14">
-<input id="myText01" type=text value=0 size=6 onmouseover="{
-	this.value = 'x = ' + document.getElementById('myImage01').style.left
-}">
+<input type=text id="myScore" value=3>
+<input type=text id="myLocation" value=3 size=14">
+<body>
 
-<img src="myImage02.png"  id="myImage02" style="position:absolute;
-z-index:-1; left:330px; top:50px; height:200px; width:200px;">
-<script> 
-var mySpeed = 10
-var myLooping = 0
-var myTotal = 0
-myDirection= 1
-myDirection2= -1
- </script>
+<img src="green ball.png" id="ball" style="position: absolute; z-index: -1; left: 200px; top: 12px; height: 100px; width: 100px;">
+</div>
 
 
-<img src="river.jpg" width="10" id="myImage01"
- style="position: absolute; z-index: -1; left: 1000px; top: 50px; height: 200px; width: 200px;">
+
+
+<script> var myLooping = 0 
+var myGamepiece= "myImage01"
+var mySpeed = 30
+var myTotal = 3
+var myLoc =  'width= 100px'
+</script>
+<img src="2048.png" width="20" id="myImage01"
+ style="position: absolute; z-index: -1; left: 400px; top: 12px; height: 100px; width: 100px;">
 <body onkeydown="{ 
 
+if (event.key == 'ArrowLeft'){
+	document.getElementById('ball').style.left =
+parseInt(document.getElementById('ball').style.left) + -10 + 'px'
+ 
+myTotal =myTotal + 0
+document.getElementById('myScore').value = myTotal
 
-if (event.key == 'd'){
-	document.getElementById('myImage02').style.left =
-parseInt(document.getElementById('myImage02').style.left) + mySpeed + 'px'
+
+   }
+
+if (event.key == 'ArrowRight'){
+	document.getElementById('ball').style.left =
+parseInt(document.getElementById('ball').style.left) + 10 + 'px'
+
+
+myTotal =myTotal * 1
+document.getElementById('myScore').value = myTotal
+   
+}
+if (event.key == 'ArrowDown'){
+document.getElementById('ball').style.top =
+parseInt(document.getElementById('ball').style.top) + 10 + 'px'
+
+   
+myTotal =myTotal * 1
+document.getElementById('myScore').value = myTotal
+
+   
 }
 
+if (event.key == 'ArrowUp'){
+	document.getElementById('ball').style.top =
+parseInt(document.getElementById('ball').style.top) + -10 + 'px'
 
-if (event.key == 'a'){
-	document.getElementById('myImage02').style.left =
-parseInt(document.getElementById('myImage02').style.left) + -mySpeed + 'px'
+
+myTotal =myTotal * 1
+document.getElementById('myScore').value = myTotal
+      
+
+   
 }
+if ( myHitOther('ball','myImage01') ){
+myTotal=myTotal -1
 
 
-if (event.key == 's'){
-	document.getElementById('myImage02').style.top =
-parseInt(document.getElementById('myImage02').style.top) + mySpeed + 'px'
 }
-if (event.key == 'w'){
-	document.getElementById('myImage02').style.top =
-parseInt(document.getElementById('myImage02').style.top) + -mySpeed + 'px'
-}
-
-
-if ( myHitOther('myImage01','myImage02') ){
-       alert('I win')
-}
-
+      
 
 }">
-</body>
-
 <script>
 function myHitOther(my1,my2){
    left1   = parseInt(document.getElementById(my1).style.left)
@@ -80,3 +94,5 @@ function myHitOther(my1,my2){
 
 
 
+</body>
+</html>
