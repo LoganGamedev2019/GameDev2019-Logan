@@ -18,7 +18,7 @@
  var myLooping = 0 
 var mySpeed = 30
 var myTotal = 3
-var step = 5
+var step = 20
 var delay = 30
 var height = 0
 var Hoffset = 0
@@ -56,6 +56,7 @@ yPos = yPos + step
 else {
 yPos = yPos - step
 }
+
 if (yPos < 0) {
 yon = 1;
 yPos = 0;
@@ -144,11 +145,15 @@ document.getElementById('myScore').value = myTotal
 if ( myHitOther('ball','myImage01') ){
 myTotal=myTotal -1
 
-
 }
-      
+if(myTotal<0){
+
+alert('you lose')
+}
+
 
 }">
+
 <script>
 function myHitOther(my1,my2){
    left1   = parseInt(document.getElementById(my1).style.left)
