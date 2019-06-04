@@ -4,13 +4,14 @@
 <body    onMouseMove="{
    document.all.myLocation.value = 'left: '+event.x+', top: '+ event.y
 }">
+<background="background.jfif" height:900 width:1600>
 <input type=text id="myScore" value=3>
 <input type=text id="myLocation" value=3 size=14">
 <body>
 <div align="center" id="img" style="position:absolute;">
 <img src="green ball.png" id="ball" style="position: absolute; z-index: -1; left: 200px; top: 12px; height: 100px; width: 100px;">
 </div>
-
+<body background="background.jfif" height:900 width:1600></body>
 
 
 
@@ -93,6 +94,8 @@ else {
 interval = setInterval('changePos()',delay);
 pause = true;
    }
+
+
 }
 //start();
 
@@ -138,11 +141,9 @@ parseInt(document.getElementById('myImage01').style.top) + -10 + 'px'
 
 myTotal =myTotal * 1
 document.getElementById('myScore').value = myTotal
-      
+      }
 
-   
-}
-if ( myHitOther('ball','myImage01') ){
+   if ( myHitOther('ball','myImage01') ){
 myTotal=myTotal -1
 
 }
@@ -150,6 +151,7 @@ if(myTotal==-1){
 
 alert('you lose')
 }
+
 
 
 }">
