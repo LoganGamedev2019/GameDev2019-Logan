@@ -1,10 +1,10 @@
-<input type=text id="myScore" value=0>
+<input type=text id="myScore" value=100>
 <input type=text id="myLocation" value=0 size=14"><br>
 
 
 <canvas id="myPlayarea" width="1000" height="500" style="border:5px solid #000000;"></canvas>
 
-<img src="green ball.png" id="myBall"style="position: absolute; z-index:-1; left:600px; top:30px; height:100px; width:100px;">
+<img src="green ball.png" id="myBall"style="position: absolute; z-index:-1; left:600px; top:30px; height:600px; width:600px;">
 <img src="2048.png" width="20" id="myImage01"  style="position: absolute; z-index:-1; left:400px; top:12px; height:100px; width:100px;">
 
 
@@ -20,9 +20,8 @@
 
    var myLooping = 0 
    var myGamepiece= "myImage01"
-   var mySpeed = 30
-   var myTotal = 0
-   var myLoc =  'width= 100px'
+   var mySpeed = 20
+   var myTotal = 100
    var myBodyInterval = 0 
    let myTop = 5
    let myLeft = 5
@@ -53,26 +52,29 @@ function myStart() {
       document.getElementById('myBall').style.top = parseInt(document.getElementById('myBall').style.top) + myTop + 'px'
       document.getElementById('myBall').style.left = parseInt(document.getElementById('myBall').style.left) + myLeft + 'px'
 
+   if (myHitOther('myImage01','myBall')){
+        myTotal= myTotal - 1
+ document.getElementById('myScore').value = myTotal
+     }
+
+
       if (parseInt(document.getElementById('myBall').style.left) < 0){
-         myLeft *= -1
+         myLeft *= -1.2
       }
       if (parseInt(document.getElementById('myBall').style.left) > 900){
-         myLeft *= -1
+         myLeft *= -1.2
       }
 
 
       if (parseInt(document.getElementById('myBall').style.top) < 30){
-         myTop *= -1
+         myTop *= -1.2
       }
       if (parseInt(document.getElementById('myBall').style.top) > 500){
-         myTop *= -1
+         myTop *= -1.2
       }
 
-     if (myHitOther('myImage01','myBall')){
-        alert('Ball hit')
-     }
+  
 }
-
 
 
 
@@ -99,7 +101,7 @@ if (event.key == 'ArrowLeft'){
 
 
      if (myHitOther('myImage01','myBall')){
-        alert('Going left')
+        myTotal= myTotal - 1
      }
 
       if (parseInt(document.getElementById('myImage01').style.left) < 0){
@@ -119,7 +121,7 @@ if (event.key == 'ArrowRight'){
 
 
      if (myHitOther('myImage01','myBall')){
-        alert('Going Right')
+        myTotal= myTotal - 1
      }
 
       if (parseInt(document.getElementById('myImage01').style.left) > 930){
@@ -138,7 +140,7 @@ if (event.key == 'ArrowDown'){
 
 
      if (myHitOther('myImage01','myBall')){
-        alert('Going down')
+        myTotal= myTotal - 1
      }
 
       if (parseInt(document.getElementById('myImage01').style.top) > 430){
@@ -156,7 +158,7 @@ clearInterval(myLooping)
 
 
      if (myHitOther('myImage01','myBall')){
-        alert('Going Up')
+        myTotal= myTotal - 1
      }
 
       if (parseInt(document.getElementById('myImage01').style.top) < 30){
@@ -167,6 +169,8 @@ clearInterval(myLooping)
 
    }, 60)
 }
-
+if(myTotal<0){
+location = 'http://www.google.ca'
+}
 
 }">
