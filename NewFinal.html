@@ -2,10 +2,10 @@
 <input type=text id="myLocation" value=0 size=14"><br>
 
 
-<canvas id="myPlayarea" width="1000" height="500" style="border:5px solid #000000;"></canvas>
+<canvas id="myPlayarea" width="1500" height="700" style="border:5px solid #000000;"></canvas>
 
-<img src="green ball.png" id="myBall"style="position: absolute; z-index:-1; left:600px; top:30px; height:300px; width:300px;">
-<img src="2048.png" width="20" id="myImage01"  style="position: absolute; z-index:-1; left:400px; top:12px; height:100px; width:100px;">
+<img src="green ball.png" id="myBall"style="position: absolute; z-index:-1; left:600px; top:30px; height:500px; width:500px;">
+<img src="2048.png" width="20" id="myImage01"  style="position: absolute; z-index:-1; left:13px; top:33px; height:150px; width:150px;">
 
 
 
@@ -23,8 +23,8 @@
    var mySpeed = 20
    var myTotal = 100
    var myBodyInterval = 0 
-   let myTop = 5
-   let myLeft = 5
+   let myTop = 7
+   let myLeft = 7
 
 
 
@@ -58,19 +58,19 @@ function myStart() {
      }
 
 
-      if (parseInt(document.getElementById('myBall').style.left) < 0){
-         myLeft *= -1.2
+      if (parseInt(document.getElementById('myBall').style.left) < 15){
+         myLeft *= -1.1
       }
-      if (parseInt(document.getElementById('myBall').style.left) > 900){
-         myLeft *= -1.2
+      if (parseInt(document.getElementById('myBall').style.left) > 1013){
+         myLeft *= -1.1
       }
 
 
-      if (parseInt(document.getElementById('myBall').style.top) < 30){
-         myTop *= -1.2
+      if (parseInt(document.getElementById('myBall').style.top) < 20){
+         myTop *= -1.1
       }
-      if (parseInt(document.getElementById('myBall').style.top) > 500){
-         myTop *= -1.2
+      if (parseInt(document.getElementById('myBall').style.top) > 230){
+         myTop *= -1.1
       }
 
   
@@ -104,7 +104,7 @@ if (event.key == 'ArrowLeft'){
         myTotal= myTotal - 1
      }
 
-      if (parseInt(document.getElementById('myImage01').style.left) < 0){
+      if (parseInt(document.getElementById('myImage01').style.left) < 10){
          document.getElementById('myImage01').style.left = '10px'
          myTotal =myTotal - 1
          document.getElementById('myScore').value = myTotal
@@ -124,8 +124,8 @@ if (event.key == 'ArrowRight'){
         myTotal= myTotal - 1
      }
 
-      if (parseInt(document.getElementById('myImage01').style.left) > 930){
-         document.getElementById('myImage01').style.left = '930px'
+      if (parseInt(document.getElementById('myImage01').style.left) > 1363){
+         document.getElementById('myImage01').style.left = '1363px'
          myTotal =myTotal - 1
          document.getElementById('myScore').value = myTotal
       }
@@ -143,8 +143,8 @@ if (event.key == 'ArrowDown'){
         myTotal= myTotal - 1
      }
 
-      if (parseInt(document.getElementById('myImage01').style.top) > 430){
-         document.getElementById('myImage01').style.top = '430px'
+      if (parseInt(document.getElementById('myImage01').style.top) > 585){
+         document.getElementById('myImage01').style.top = '585px'
          myTotal =myTotal - 1
          document.getElementById('myScore').value = myTotal
       }
