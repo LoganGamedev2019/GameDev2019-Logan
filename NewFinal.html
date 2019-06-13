@@ -1,5 +1,4 @@
-<input type=text id="myScore" value=100>
-<input type=text id="myLocation" value=0 size=14"><br>
+<input type=text id="myScore" value=100> Do not hit walls or you will lose points
 
 
 <canvas id="myPlayarea" width="1500" height="700" style="border:5px solid #000000;"></canvas>
@@ -23,8 +22,8 @@
    var mySpeed = 20
    var myTotal = 100
    var myBodyInterval = 0 
-   let myTop = 7
-   let myLeft = 7
+   let myTop = 10
+   let myLeft = 10
 
 
 
@@ -59,18 +58,18 @@ function myStart() {
 
 
       if (parseInt(document.getElementById('myBall').style.left) < 15){
-         myLeft *= -1.1
+         myLeft *= -1
       }
       if (parseInt(document.getElementById('myBall').style.left) > 1013){
-         myLeft *= -1.1
+         myLeft *= -1
       }
 
 
-      if (parseInt(document.getElementById('myBall').style.top) < 20){
-         myTop *= -1.1
+      if (parseInt(document.getElementById('myBall').style.top) < 33){
+         myTop *= -1
       }
       if (parseInt(document.getElementById('myBall').style.top) > 230){
-         myTop *= -1.1
+         myTop *= -1
       }
 
   
@@ -170,7 +169,7 @@ clearInterval(myLooping)
    }, 60)
 }
 if(myTotal<0){
-location = 'http://www.google.ca'
+location = 'https://logangamedev2019.github.io/GameDev2019-Logan/Con3%20LVL%202/'
 }
 
 }">
