@@ -1,9 +1,9 @@
-<input type=text id="myScore" value=100> Do not hit walls or you will lose points. Arrow Keys To Move Block
+<input type=text id="myScore" value=100> Do not hit walls or you will lose points. Arrow Keys To Move Block. F11 for full screen for a better expirience. <b>Survive 20 seconds to win</b>
 
 
 <canvas id="myPlayarea" width="1500" height="700" style="border:5px solid #000000;"></canvas>
 
-<img src="green ball.png" id="myBall"style="position: absolute; z-index:-1; left:600px; top:30px; height:500px; width:500px;">
+<img src="green ball.png" id="myBall"style="position: absolute; z-index:-1; left:600px; top:30px; height:400px; width:400px;">
 <img src="2048.png" width="20" id="myImage01"  style="position: absolute; z-index:-1; left:13px; top:33px; height:150px; width:150px;">
 
 
@@ -22,9 +22,9 @@
    var mySpeed = 20
    var myTotal = 100
    var myBodyInterval = 0 
-   let myTop = 10
-   let myLeft = 10
-
+   let myTop = 15
+   let myLeft = 15
+setInterval(function(){location = 'https://logangamedev2019.github.io/GameDev2019-Logan/Con3%20LVL%202/' ; }, 20000);
 
 
 function myHitOther(my1,my2){
@@ -60,7 +60,7 @@ function myStart() {
       if (parseInt(document.getElementById('myBall').style.left) < 15){
          myLeft *= -1
       }
-      if (parseInt(document.getElementById('myBall').style.left) > 1013){
+      if (parseInt(document.getElementById('myBall').style.left) > 1111){
          myLeft *= -1
       }
 
@@ -68,7 +68,7 @@ function myStart() {
       if (parseInt(document.getElementById('myBall').style.top) < 33){
          myTop *= -1
       }
-      if (parseInt(document.getElementById('myBall').style.top) > 230){
+      if (parseInt(document.getElementById('myBall').style.top) > 330){
          myTop *= -1
       }
 
