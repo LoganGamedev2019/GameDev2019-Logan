@@ -92,7 +92,7 @@
 
 <textarea id="myArea03" rows=3 cols=60></textarea>
 
-<input type=button value="encrypt using numbers" onclick="{
+<input type=button value="encrypt using ascii" onclick="{
 	let myString = document.getElementById('myArea01').value.toLowerCase()
 	let myTemp = ' '
 		for(let x=0; x < myString.length; x++){
@@ -101,7 +101,7 @@
 		document.getElementById('myArea02').value= myTemp
 }">
 
-<input type=button value="decrypt using numbers" onclick="{
+<input type=button value="decrypt using ascii" onclick="{
 	let myString = document.getElementById('myArea02').value.toLowerCase()
 	let myTemp = ' '
 		for (let x=0; x < myString.length; x++){
@@ -110,16 +110,27 @@
 	document.getElementById('myArea03').value = myTemp
 
 }">
+<textarea id="myArea04" rows=4 cols=70> </textarea>
+<textarea id="myArea05" rows=4 cols=70> </textarea>
 
-<button onclick="myFunction()">Try it</button>
+
+
+
+
+
+<button onclick="myFunction()">Base64</button>
+
+
+
 <p id="demo"></p>
 
 <script>
 function myFunction() {
-  var str = "How do i decode this";
+  var str = document.getElementById('myArea04');
   var enc = window.btoa(str);
+  var dec = window.atob(enc);
 
-  var res = "Encoded String: " + enc;
-  document.getElementById("demo").innerHTML = "The original string: " + str + "<br>" + res;
+  var res = "Encoded String: " + enc + "<br>" + "Decoded String: " + dec;
+  document.getElementById("myArea05").innerHTML = res;
 }
 </script>
